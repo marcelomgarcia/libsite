@@ -1,0 +1,29 @@
+version: '3.9'
+
+services: 
+  web:
+    image: drupal:8.9.15-php7.4-apache-buster
+    ports: 
+      - 8080:80
+    volumes: 
+      - /var/www/html/modules
+      - /var/www/html/profiles
+      - /var/www/html/themes
+      - /var/www/html/sites
+    restart: always
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+        MYSQL_DATABASE: drupal
+        MYSQL_USER: user
+        MYSQL_PASSWORD: password
+        MYSQL_ROOT_PASSWORD: password
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
