@@ -24,4 +24,4 @@ Using the example of `docker compose` for installing Drupal with MySQL.
 During the configuration, the database hostname is _db_ not _localhost_ in the _advanced_ options.
 
 [wsl_install]: https://docs.microsoft.com/en-us/windows/wsl/install-win10 "WSL2 Install"
-[desktop]: https://www.docker.com/products/docker-desktop "Docker Desktop"
+[desktop]: https://www.docker.com/products/docker-desktop "Docker Desktop page"
