@@ -36,9 +36,10 @@ drwxrwxr-x 7 www-data www-data 4.0K May 11 18:46 files/
 root@a405cbfee69b:/var/www/html/sites/default#
 ```
 
-Installed the [W3CSS][w3theme] theme, with predefined color "W3 CSS Theme 00014."
+Installed the [W3CSS][w3csspage] [theme][w3theme], with predefined color "W3 CSS Theme 00014."
 
 
 [wsl_install]: https://docs.microsoft.com/en-us/windows/wsl/install-win10 "WSL2 Install"
 [desktop]: https://www.docker.com/products/docker-desktop "Docker Desktop page"
-[w3theme]: https://www.drupal.org/project/d8w3css "W3CSS theme for Drupal 8 and 9"
+[w3csspage]: https://drupal8-w3css-theme.flashwebcenter.com/ "W3CSS theme for Drupal 8 and 9"
+[w3theme]: https://www.drupal.org/project/d8w3css "Drupal W3CSS theme page"
