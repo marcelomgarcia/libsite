@@ -11,11 +11,11 @@ Things that need to be installed before using Docker on your desktop
 
 ### Windows Subsystem for Linux
 
-Install [WSL2][wsl_install] on the enabler the _Hyper V_ virtualization.
+Install [WSL2][wsl_install] on the enable the _Hyper V_ virtualization.
 
 ### Docker 
 
-Installed [Docker Desktop][desktop] to test the hosting of the IT department.
+Installed [Docker Desktop][desktop] to test combination Drupal and MySQL locally.
 
 ## Drupal
 
