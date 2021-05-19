@@ -65,7 +65,31 @@ Using version dev-master for cubear/finder
   (...)
 ```
 
-This time failed because the modules `unzip` and `git` weren't installed on the container.
+This time failed because the modules `unzip` and `git` weren't installed on the container. The solution was to create a new container _finder_ to install Drupal and the modules. To create a custom image for Drupal, a new entry on the `docker-composer.yml` was created, and it's important to declare the _build_ section, where we specify the `Dockerfile` for the container. The `context` is a key word that specify the working directory, in this case, it's the directory with all the files.
+
+```
+(...)
+  finder:
+    build:
+      context: .
+      dockerfile: ./finder.Dockerfile
+(...)
+```
+
+After creating the image, we installed the module _finder_ using the composer
+
+```
+root@99642be2ac8d:/opt/drupal/web# php -d memory_limit=-1 `which composer` require cubear/finder
+(...)
+Package operations: 5 installs, 0 updates, 0 removals
+  - Installing phpmailer/phpmailer (v6.4.1): Downloading (100%)
+  - Installing drupal/smtp (1.0.0): Downloading (100%)
+  - Installing drupal/entity_reference_revisions (1.9.0): Downloading (100%)
+  - Installing drupal/paragraphs (1.12.0): Downloading (100%)
+  - Installing cubear/finder (dev-master e223034): Cloning e223034b27 from cache
+(...)  
+```
+
 
 [wsl_install]: https://docs.microsoft.com/en-us/windows/wsl/install-win10 "WSL2 Install"
 [desktop]: https://www.docker.com/products/docker-desktop "Docker Desktop page"
