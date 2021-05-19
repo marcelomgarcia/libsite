@@ -12,6 +12,14 @@ services:
       - /var/www/html/sites
     restart: always
 
+  sfinder:
+    image: drupal:8.9.15-php7.4-apache-buster
+    ports:
+      - 8082:80
+    volumes:
+      - /var/www/finder/
+    restart: always
+
   db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
