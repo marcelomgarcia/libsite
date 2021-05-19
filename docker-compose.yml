@@ -12,6 +12,19 @@ services:
       - /var/www/html/sites
     restart: always
 
+  finder:
+    build:
+      context: .
+      dockerfile: ./finder.Dockerfile
+    ports:
+      - 8082:80
+    volumes:
+      - /var/www/finder/modules
+      - /var/www/finder/profiles
+      - /var/www/finder/themes
+      - /var/www/finder/sites
+    restart: always
+
   db:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
