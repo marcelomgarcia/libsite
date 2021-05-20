@@ -19,10 +19,10 @@ services:
     ports:
       - 8082:80
     volumes:
-      - /var/www/finder/modules
-      - /var/www/finder/profiles
-      - /var/www/finder/themes
-      - /var/www/finder/sites
+      - /var/www/html/modules
+      - /var/www/html/profiles
+      - /var/www/html/themes
+      - /var/www/html/sites
     restart: always
 
   db:
