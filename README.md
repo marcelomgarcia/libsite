@@ -19,28 +19,13 @@ Installed [Docker Desktop][desktop] to test combination Drupal and MySQL locally
 
 ## Drupal
 
-Using the example of `docker compose` for installing Drupal with MySQL.
-
-During the configuration, the database hostname is _db_ not _localhost_ in the _advanced_ options.
-
-The default localtion of the Drupal _root_ directory, as defined in the `compose` file, is 
-
-```
-root@a405cbfee69b:/var/www/html/sites/default# pwd; ll
-/var/www/html/sites/default
-total 76K
--rw-r--r-- 1 www-data www-data 6.7K May  7 00:36 default.services.yml
--rw-r--r-- 1 www-data www-data  32K May  7 00:36 default.settings.php
-drwxrwxr-x 7 www-data www-data 4.0K May 11 18:46 files/
--r--r--r-- 1 www-data www-data  32K May 11 18:35 settings.php
-root@a405cbfee69b:/var/www/html/sites/default#
-```
+Using the example of `docker compose` for installing Drupal with MySQL. Please note that during the configuration of Drupal, the database hostname is _db_ not _localhost_ in the _advanced_ options. Also note that the original container is already configured with [composer][php_composer], this means, that it's already installed on the container, and ready to use.
 
 Installed the [W3CSS][w3csspage] [theme][w3theme], with predefined color "W3 CSS Theme 00014."
 
 ### Finder Module
 
-Created a second Drupal container to install the "finder" module. The first attempt to install the module was via PHP [composer][php_composer]. The installation failed due to memory exaustion.
+Created a second Drupal container to install the "finder" module. The first attempt to install the module was via `composer`. The installation failed due to memory exaustion.
 
 ```
 root@78e6a02a78fb:/var/www/html/modules# composer require cubear/finder
@@ -76,7 +61,7 @@ This time failed because the modules `unzip` and `git` weren't installed on the 
 (...)
 ```
 
-After creating the image, we installed the module _finder_ using the composer
+After creating the image, we installed the module _finder_ using the composer on the _site root_ `/opt/drupal/web`
 
 ```
 root@99642be2ac8d:/opt/drupal/web# php -d memory_limit=-1 `which composer` require cubear/finder
