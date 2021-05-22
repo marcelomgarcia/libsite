@@ -75,6 +75,13 @@ Package operations: 5 installs, 0 updates, 0 removals
 (...)  
 ```
 
+After installing the module, enable it (and dependencies) in `admin/modules`
+
+* Finder.
+* Paragraphs.
+* Paragraphs Type Permissions.
+* Entity Reference Revisions.
+* SMTP Authentication Support. (Probably not necessary if we are not going to send email from website.)
 
 [wsl_install]: https://docs.microsoft.com/en-us/windows/wsl/install-win10 "WSL2 Install"
 [desktop]: https://www.docker.com/products/docker-desktop "Docker Desktop page"
