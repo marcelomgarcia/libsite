@@ -2,7 +2,7 @@ version: '3.9'
 
 services: 
   web:
-    image: drupal:8.9.15-php7.4-apache-buster
+    image: 9.1.9-php8.0-apache-buster
     ports: 
       - 8080:80
     volumes: 
