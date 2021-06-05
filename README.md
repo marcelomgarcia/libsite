@@ -83,9 +83,27 @@ After installing the module, enable it (and dependencies) in `admin/modules`
 * Entity Reference Revisions.
 * SMTP Authentication Support. (Probably not necessary if we are not going to send email from website.)
 
+## Applying Security Update
+
+Applying a [security update to Drupal core][core_update]. To update the container we will first copy the `settings.php` from the container to a `files` directory, change the file, and copy the edited file to container:
+
+```
+PS C:\Users\garcm0b\OneDrive - KAUST\Documents\Work\libsite\files> docker cp libsite_finder_1:/opt/drupal/web/sites/default/settings.php .
+PS C:\Users\garcm0b\OneDrive - KAUST\Documents\Work\libsite\files> wsl cp settings.php settings.php_orig
+PS C:\Users\garcm0b\OneDrive - KAUST\Documents\Work\libsite\files> wsl diff settings.php settings.php_orig
+316c316
+< $settings['update_free_access'] = TRUE;
+---
+> $settings['update_free_access'] = FALSE;
+PS C:\Users\garcm0b\OneDrive - KAUST\Documents\Work\libsite\files>
+```
+
+
+
 [wsl_install]: https://docs.microsoft.com/en-us/windows/wsl/install-win10 "WSL2 Install"
 [desktop]: https://www.docker.com/products/docker-desktop "Docker Desktop page"
 [w3csspage]: https://drupal8-w3css-theme.flashwebcenter.com/ "W3CSS theme for Drupal 8 and 9"
 [w3theme]: https://www.drupal.org/project/d8w3css "Drupal W3CSS theme page"
 [php_composer]: https://getcomposer.org/ "PHP composer"
 [composer_memory]: https://getcomposer.org/doc/articles/troubleshooting.md#memory-limit-errors "Composer memory limit error"
+[core_update]: https://www.drupal.org/docs/user_guide/en/security-update-core.html "Update Drupal Core"
