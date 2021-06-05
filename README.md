@@ -83,6 +83,14 @@ After installing the module, enable it (and dependencies) in `admin/modules`
 * Entity Reference Revisions.
 * SMTP Authentication Support. (Probably not necessary if we are not going to send email from website.)
 
+## New Container Image
+
+After changing the compose file to use a new image, it's necessary to rebuild the containers
+
+```
+PS C:\Users\garcm0b\OneDrive - KAUST\Documents\Work\libsite> docker compose build
+```
+
 ## Applying Security Update
 
 Applying a [security update to Drupal core][core_update]. To update the container we will first copy the `settings.php` from the container to a `files` directory, change the file, and copy the edited file to container:
